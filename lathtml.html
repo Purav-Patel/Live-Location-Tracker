@@ -1,0 +1,26 @@
+<HTML>
+    <head>
+        <title>Location count</title>
+        <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>    
+    </head>
+    <body>
+        <div class="locat-table">
+            <div clas='firstclmn'>
+                <ul class="act-data" id="ul"></ul>
+            </div>
+        </div>
+        <script>
+            $ul = $('#ul')
+        var socket= io.connect();
+        socket.on('datatoweb',function(data){
+            html='<li>'+data+'</li>';
+              $ul.append(html);   
+            // var li = document.createElement("li");
+            // li.appendChild(document.createTextNode(data));
+            // $ul.appendChild(li);
+        });
+        </script>
+    </body>
+
+</HTML>    
